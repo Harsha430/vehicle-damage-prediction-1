@@ -1,0 +1,249 @@
+/* DamageReport.css */
+:root {
+  --primary-color: #4f46e5;
+  --primary-light: #818cf8;
+  --primary-dark: #3730a3;
+  --accent-color: #8b5cf6;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-light: #9ca3af;
+  --bg-light: #f9fafb;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --border-radius-sm: 0.375rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+}
+
+/* Main Damage Report Card */
+.damage-report {
+  margin-bottom: 1.5rem;
+}
+
+.damage-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(8px);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(209, 213, 219, 0.5);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.damage-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Decorative Elements */
+.decorative-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: 0;
+}
+
+.blob-1 {
+  top: 0;
+  right: 0;
+  width: 8rem;
+  height: 8rem;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+  opacity: 0.5;
+}
+
+.blob-2 {
+  bottom: 0;
+  left: 0;
+  width: 6rem;
+  height: 6rem;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, rgba(20, 184, 166, 0.05) 100%);
+  opacity: 0.3;
+}
+
+/* Damage Header */
+.damage-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.severity-indicator {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.damage-component {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* Severity Classes */
+.damage-severity-severe {
+  background: var(--danger-color);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+.damage-severity-moderate {
+  background: var(--warning-color);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.damage-severity-minor {
+  background: var(--success-color);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.damage-severity-default {
+  background: var(--text-light);
+  box-shadow: 0 0 10px rgba(156, 163, 175, 0.5);
+}
+
+/* Damage Meta Information */
+.damage-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.severity-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-md);
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 0.75rem;
+  color: white;
+}
+
+.severity-badge.damage-severity-severe {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.severity-badge.damage-severity-moderate {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.severity-badge.damage-severity-minor {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.severity-badge.damage-severity-default {
+  background: linear-gradient(135deg, #9ca3af, #6b7280);
+}
+
+.damage-location {
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary);
+}
+
+.location-icon {
+  font-size: 1rem !important;
+  margin-right: 0.25rem;
+  color: var(--text-light);
+}
+
+.location-text {
+  font-size: 0.875rem;
+}
+
+/* Divider */
+.damage-divider {
+  height: 1px;
+  margin: 1rem 0;
+  background: linear-gradient(to right, transparent, var(--text-light), transparent);
+  opacity: 0.2;
+}
+
+/* Description */
+.damage-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Cost Estimate */
+.cost-estimate {
+  background: linear-gradient(to bottom right, rgba(249, 250, 251, 0.8), rgba(243, 244, 246, 0.8));
+  border-radius: var(--border-radius-md);
+  padding: 1rem;
+  position: relative;
+  border: 1px solid rgba(209, 213, 219, 0.5);
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.cost-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.cost-icon {
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+  font-size: 1.25rem !important;
+}
+
+.cost-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.cost-amount {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0.5rem 0;
+}
+
+.cost-note {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* Shimmer Effect */
+.shimmer-effect {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 2s infinite;
+  z-index: 0;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+} 
